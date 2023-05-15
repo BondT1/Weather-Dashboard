@@ -170,5 +170,22 @@ function history(city) {
 
 }
 
+// function to submit search input
+function submitSearch(event) {
+    event.preventDefault();
+    var city = cityEl.val().trim();
+
+    if (city) {
+    fetchWeather(city);
+    history(city);
+    insertLocalStorage().citySearch.push(city);
+    saveLocalStorage();
+    cityEl.val('')
+
+    } else {
+        alert('City input invalid');
+    }
+}
+
 
      
