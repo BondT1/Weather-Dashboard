@@ -26,3 +26,33 @@ function fetchWeather(city) {
                         .then(function (weatherResult) {
                             if (weatherResult.ok) {
                                 weatherResult.json().then(function (weatherInfo) {
+                                    
+                                    // current day container
+                                    // Jquery for this container 
+                                    var weatherNow = $('<div></div>')
+                                    .attr({ id: 'weather-now'})
+                                    var current = weatherInfo.list[0];
+                                    var icon = current.weather[0].icon;
+                                    var cityIcon = weatherIcon + icon + '.png';
+                                    var iconEL = $('<img>')
+                                        .attr({ id: 'weather-current-icon',
+                                                src: cityIcon,
+                                                alt: 'Icon for weather'});
+
+                                    var currentHeading = $('<h2></h2>')
+                                        .text(city + ' (' + currentDate + ')');
+
+                                    var weatherListCurrent = $('<ul></ul>');
+
+                                    var weatherDetailsCurrent = ['Temp: ' + current.main.temp + ' °C', 'Wind: ' + current.wind.speed + ' MPH', 'Humidity: ' + current.main.humidity + '%']
+                                    
+                                    for (var i = 0; i < weatherDetailsCurrent.length; i++) {
+                                        var currentWeatherItem = $('<li></li>')
+                                            .text(weatherDetailsCurrent[i])
+                                        weatherListCurrent.append(currentWeatherItem);    
+                                    }
+
+                                    weatherNow.append(currentHeading);
+                                    currentHeading.append(iconEL);
+                                    weatherNow.append(weatherListCurrent);
+                                    $('#five-forecast').before(weatherNow);
