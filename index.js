@@ -128,5 +128,29 @@ function fetchWeather(city) {
              alert('Unable to connect');
          });
  
- }
+}
+
+// local storage
+
+function insertLocalStorage() {
+    var historyArray = JSON.parse(localStorage.getItem('history'));
+
+    if (!historyArray) {
+        historyArray = {
+            citySearch: [],
+        };
+
+    } else {
+    for (var i = 0; i < historyArray.citySearch.length; i++) {
+        history(historyArray.citySearch[i]);
+    }}
+
+    return historyArray;
+}
+
+function saveLocalStorage() {
+    localStorage.setItem('history', JSON.stringify(insertLocalStorage()));    
+}
+
+
      
