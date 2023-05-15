@@ -26,7 +26,7 @@ function fetchWeather(city) {
                         .then(function (weatherResult) {
                             if (weatherResult.ok) {
                                 weatherResult.json().then(function (weatherInfo) {
-                                    
+
                                     // current day container
                                     // Jquery for this container 
                                     var weatherNow = $('<div></div>')
@@ -56,3 +56,20 @@ function fetchWeather(city) {
                                     currentHeading.append(iconEL);
                                     weatherNow.append(weatherListCurrent);
                                     $('#five-forecast').before(weatherNow);
+
+                                    // Five day forecast
+                                    // Jquery for this container
+
+                                    var fiveForecastHeader = $('<h2></h2>')
+                                        .text("5-Day-Forecast:")
+                                        .attr({id: 'five-forecast-header'})
+
+                                    $('#weather-now').after(fiveForecastHeader)
+
+                                    var fiveForecastArray = [];
+
+                                    for (var i = 0; i < 5; i++) {
+                                        let date = moment().add(i + 1, 'days').format('DD/M/YYYY');
+
+                                        fiveForecastArray.push(date);
+                                    }
