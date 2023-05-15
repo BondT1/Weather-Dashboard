@@ -116,3 +116,17 @@ function fetchWeather(city) {
 
                                 })
                             }
+                        })
+                    });
+                 
+             } else {
+                 alert('Open Weather Server could not find city')           
+             }
+         })
+         
+         .catch(function (err) {
+             alert('Unable to connect');
+         });
+ 
+ }
+     
