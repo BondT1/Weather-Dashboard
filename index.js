@@ -73,3 +73,46 @@ function fetchWeather(city) {
 
                                         fiveForecastArray.push(date);
                                     }
+
+                                    
+                                    // Weather cards for five day forecast
+
+                                    for (var i = 0; i < fiveForecastArray.length; i++) {
+                                        var weatherCard = $('<div></div>')
+                                            .addClass('card');
+
+                                        var weatherCardMain = $('<div></div>')
+                                            .addClass('card-main');
+
+                                        var cardH3 = $('<h3></h3>')
+                                            .addClass('card-h3')
+                                            .text(fiveForecastArray[i]);
+
+                                        var fiveIcon = weatherInfo.list[i].weather[0].icon;
+
+                                        var fiveIconEl = $('<img></img>')
+                                            .attr({
+                                                src: weatherIcon + fiveIcon + '.png',
+                                                alt: 'Forecast Icon'
+                                            });
+                                        
+                                        var tempInfo = $('<p></p>')
+                                            .text('Temp: ' + weatherInfo.list[i].main.temp_max  + "\u2103");
+                                        
+                                        var windInfo = $('<p></p>')
+                                            .text('Wind: ' + weatherInfo.list[i].wind.speed + 'MPH');
+                                        
+                                        var humidityInfo = $('<p></p>')
+                                            .text('Humidity: ' + weatherInfo.list[i].main.humidity + '%');
+
+                                        fiveForecastEl.append(weatherCard);
+                                        weatherCard.append(weatherCardMain);
+                                        weatherCardMain.append(cardH3);
+                                        weatherCardMain.append(fiveIconEl);
+                                        weatherCardMain.append(tempInfo);
+                                        weatherCardMain.append(windInfo);
+                                        weatherCardMain.append(humidityInfo)
+                                    }                         
+
+                                })
+                            }
