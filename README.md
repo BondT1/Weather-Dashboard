@@ -17,7 +17,7 @@ The features used to create this project consist of:
 - 'if' statements 
 - 'fetch'
 
-The deployed application can be viewed through this link - 
+The deployed application can be viewed through this link - https://bondt1.github.io/Weather-Dashboard/
 
 ## Installation
 
