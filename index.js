@@ -187,5 +187,14 @@ function submitSearch(event) {
     }
 }
 
+// search button click listener
+$('#search-button').on('click', function () {
+    $('#weather-now').remove();
+    $('#five-forecast').empty();
+    $('#five-forecast-header').remove();
+})
+
+formEL.on('submit', submitSearch);
+
 
      
