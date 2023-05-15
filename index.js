@@ -152,5 +152,23 @@ function saveLocalStorage() {
     localStorage.setItem('history', JSON.stringify(insertLocalStorage()));    
 }
 
+// history btns
+function history(city) {
+    var historyButton = $('<button></button>')
+        .addClass('btn')
+        .text(city)
+        .on('click', function () {
+            $('#weather-now').remove();
+            $('#five-forecast').empty();
+            $('#five-forecast-header').remove();
+            fetchWeather(city);
+        })
+        .attr({ type: 'button'
+        });
+
+        historyEl.append(historyButton);
+
+}
+
 
      
