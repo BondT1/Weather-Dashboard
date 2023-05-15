@@ -146,3 +146,99 @@ p {
     margin-top: 1%;
     margin-bottom: 1%;
 }
+
+/* large screens */
+@media (max-width: 1505px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+/* medium screens */
+@media (max-width: 1144px) {
+
+    .column1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #city {
+        text-align: center;
+    }
+
+    #history {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #city-search, hr, .btn {
+        width: 30rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    #search-button {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    .forecast {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    #weather-now {
+        height: 20%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 2rem;
+        width: 500px;
+    }
+
+    h2 {
+        justify-content: center;
+    }
+
+    .card-main {
+        height: 20rem;
+        padding-left: 0;
+        padding-top: 1%;
+        width: 22rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: .5rem auto;
+    }
+
+    hr {
+        border: 0rem;
+    }
+}
+
+/* small screens */
+@media (max-width: 768px) {
+    .column1 .forecast .card {
+        width: 100%;
+    }
+}
+
+/* very small screens */
+@media (max-width: 630px) {
+
+    #weather-now {
+        width: 290px;
+    }
+
+    h2 {
+        padding: 4%
+    }
+}
